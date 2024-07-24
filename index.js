@@ -363,8 +363,17 @@ $(function () {
     var searchBar = $("#search");
     var timeText = $("#time");
     var suggestionsWrap = $("#suggestions");
-    function UpdateTime() {
-        timeText.html(new Date().format("hh:mm"));
+    function UpdateTime() 
+    {
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = (date.getMonth()+1).toString().padStart(2,'0');
+        let day = date.getDate().toString().padStart(2,'0');
+        var yymmdd = year+'-'+month+'-'+day;
+        var age=year-2001;
+        var text=yymmdd + "=>" + age +"岁=>"+ new Date().format("hh:mm:ss");
+
+        timeText.html(text);
     }
     UpdateTime();
     setInterval(UpdateTime, 1000);
