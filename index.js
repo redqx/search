@@ -459,7 +459,8 @@ var QuoteSearch = /** @class */ (function () {
     }
     QuoteSearch.prototype.Search = function (newtab) {
         var _this = this;
-        if (newtab === void 0) { newtab = false; }
+        //if (newtab === void 0) { newtab = false; }
+        newtab=true; //新的页面打开
         // 打开搜索结果
         var openResult = function (url, keyword) {
             return window.open(url.replace("%s", encodeURIComponent(_this.suggestion.GetObjOrSelected(keyword))), newtab ? "_blank" : "_self");
