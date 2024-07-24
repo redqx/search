@@ -459,11 +459,10 @@ var QuoteSearch = /** @class */ (function () {
     }
     QuoteSearch.prototype.Search = function (newtab) {
         var _this = this;
-        //if (newtab === void 0) { newtab = false; }
-        newtab=true; //新的页面打开
+        if (newtab === void 0) { newtab = false; }
         // 打开搜索结果
         var openResult = function (url, keyword) {
-            return window.open(url.replace("%s", encodeURIComponent(_this.suggestion.GetObjOrSelected(keyword))), newtab ? "_blank" : "_self");
+            return window.open(url.replace("%s", encodeURIComponent(_this.suggestion.GetObjOrSelected(keyword))), "_blank" );
         };
         var s = SplitKeyword(this.searchBar.val().toString());
         console.log(s);
